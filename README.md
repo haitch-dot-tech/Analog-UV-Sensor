@@ -20,10 +20,10 @@ Connection is as simple as giving power to the UV sensor (make sure it gets the 
 ## Usage
 1. Start your code with ```#include <UNSensor.hpp>```. Then create an object to represent the library with ```UVSensor objectname;```.
 2. Initialise the library in your setup() by using ```objectname.init(pin, res, volts, offset);```
- * ```pin``` - Pin for the library to analogRead() from
- * ```res``` - Resolution of the ADC on your board (e.g. 10 bits)
- * ```volts``` - Max voltage of the ADC (IO voltage)
- * ```offset``` - Millivolts offset for your sensor (e.g. -18)
+   * ```pin``` - Pin for the library to analogRead() from
+   * ```res``` - Resolution of the ADC on your board (e.g. 10 bits)
+   * ```volts``` - Max voltage of the ADC (IO voltage)
+   * ```offset``` - Millivolts offset for your sensor (e.g. -18)
 3. In your loop, use ```objectname.update();``` to update the library's memory. You must do this to have non-zero ouput values.
 4. Use ```objectname.getIndex();``` and ```objectname.getVoltage();``` to get the processed UV index and sensor voltage (in millivolts) respectively.
 
@@ -33,5 +33,5 @@ Although the sensor is often within about 25 millivolts around correct, you may 
 __To do this:__
 1. Connect your sensor up to your board and run the Sensor Voltage example with an offset of zero to get a baseline reading.
 2. While this is happening, probe the sensor output with a multimeter and compare the two voltage readings.
- * If the voltage reading from the serial monitor is _more_ than that of the multimeter, for example +14mV, then set your offset to -14 to counteract it.
- * Likewise, if the serial reading is _less_, set the offset to the difference.
+   * If the voltage reading from the serial monitor is _more_ than that of the multimeter, for example +14mV, then set your offset to -14 to counteract it.
+   * Likewise, if the serial reading is _less_, set the offset to the difference.
